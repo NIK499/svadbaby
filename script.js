@@ -5,6 +5,39 @@ const TEMPLATE_ID = "template_qevmej8";
 // ====================================================================
 
 document.addEventListener('DOMContentLoaded', function() {
+
+    // 1. ОПРЕДЕЛЕНИЕ ЯЗЫКА И АВТОПЕРЕВОД
+    const userLang = navigator.language || navigator.userLanguage;
+    const isEnglish = userLang.toLowerCase().includes('en'); // true, если язык английский//
+
+    if (isEnglish) {
+        // Переводим обычный текст
+        document.querySelectorAll('[data-en]').forEach(el => {
+            el.textContent = el.getAttribute('data-en');
+        });
+        // Переводим подсказки (placeholder) в полях
+        document.querySelectorAll('[data-en-placeholder]').forEach(el => {
+            el.setAttribute('placeholder', el.getAttribute('data-en-placeholder'));
+        });
+        // Переводим значения, которые отправляются на почту
+        document.querySelectorAll('[data-en-value]').forEach(el => {
+            el.setAttribute('value', el.getAttribute('data-en-value'));
+        });
+    }
+
+    // Тексты уведомлений в зависимости от языка
+    const messages = {
+        sending: isEnglish ? 'SENDING...' : 'ОТПРАВКА...',
+        sendBtn: isEnglish ? 'SEND' : 'ОТПРАВИТЬ',
+        success: isEnglish ? 'Your response has been successfully sent! Thank you!' : 'Ваш ответ успешно отправлен! Спасибо!',
+        error: isEnglish ? 'Server error: ' : 'Ошибка сервера EmailJS: ',
+        scriptError: isEnglish ? 'Internal error: ' : 'Внутренняя ошибка скрипта: ',
+        none: isEnglish ? 'Not specified' : 'Не указано',
+        noDrinks: isEnglish ? 'No drinks selected' : 'Напитки не выбраны'
+    };
+
+
+
     const weddingForm = document.querySelector('form');
     if (!weddingForm) return;
 
