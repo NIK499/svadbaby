@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приглашение на свадьбу в стиле Прованс</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Александр & Виктория</h1>
+            <p>18 • 09 • 2026</p>
+        </div>
+    </header>
+
+    <div class="wedding-timer-container">
+        <h2 class="timer-title">До нашей свадьбы осталось</h2>
+        <div id="countdown" class="elegant-countdown">
+            <div class="timer-item"><span id="days">00</span><p>дней</p></div>
+            <div class="timer-divider">:</div>
+            <div class="timer-item"><span id="hours">00</span><p>часов</p></div>
+            <div class="timer-divider">:</div>
+            <div class="timer-item"><span id="minutes">00</span><p>минут</p></div>
+            <div class="timer-divider">:</div>
+            <div class="timer-item"><span id="seconds">00</span><p>секунд</p></div>
+        </div>
+    </div>
+    
+    <hr class="hr-shelf">
+
+    <section class="invitation">
+        <h2 class="section-title">Приглашение</h2>
+        <p>Дорогие родные и друзья!</p>
+        <p>В нашей жизни наступает особенный момент, наполненный теплом и гармонией. Мы искренне хотим разделить этот важный день с самыми близкими людьми. Приглашаем вас стать свидетелями начала нашей семейной истории.</p>
+    </section>
+
+    <hr class="hr-shelf">
+  
+    <section class="details">
+        <div class="detail-box">
+            <h3>Когда</h3>
+            <p><strong>Воскресенье, 18 сентября 2026</strong></p>
+            <p>Выездная регистрация: 16:00<br>Сбор гостей: 17:30<br>Праздничный банкет: 18:00</p>
+        </div>
+        <div class="detail-box">
+            <h3>Где</h3>
+            <p><strong>Ресторан "Прованс"</strong></p>
+            <p>Билецкий спуск, 1</p>
+            <a id="but" href="https://www.google.com/maps/place/%D0%9F%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D1%81/@52.4271909,31.0172509,689m/data=!3m2!1e3!4b1!4m6!3m5!1s0x46d46856dd4f35eb:0x7a99774e8043abb1!8m2!3d52.4271877!4d31.0198258!16s%2Fg%2F11b7clz9wc?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D">На картах</a>
+        </div>
+    </section>
+
+   
+    <div class="dresscode-section">
+        <h2 class="dresscode-title">Дресс-код</h2>
+        
+        <div class="dresscode-banner">
+            Вы будете гармонично смотреться на фотографиях, если палитра вашего наряда будет примерно следующей цветовой гаммы:
+        </div>
+
+        <div class="dresscode-colors">
+            <div class="dresscode-circle dc-1"></div>
+            <div class="dresscode-circle dc-2"></div>
+            <div class="dresscode-circle dc-3"></div>
+            <div class="dresscode-circle dc-4"></div>
+        </div>
+
+        <div class="dresscode-gallery">
+            <!-- Все надписи 'alt' удалены, чтобы ничего лишнего не отображалось -->
+            <img class="gallery-img" src="https://st9.styapokupayu.ru/images/blog_post_images/000/408/237_original.jpg" alt="">
+            <img class="gallery-img" src="https://i.redd.it/w4w9zwkhae1d1.jpeg" alt="">
+            <img class="gallery-img" src="https://i.pinimg.com/236x/ea/16/bb/ea16bb460048032c51b230c1376f2846.jpg" alt="">
+            <img class="gallery-img" src="https://i.pinimg.com/236x/1d/87/c1/1d87c1e35ca1f17964728072e499fd5c.jpg" alt="">
+        </div>
+    </div>
+
+    <section class="invitation">
+        <h2 class="section-title">Дорогие гости!</h2>
+        <p>Т.к. много цветов с праздника быстро завянут, и мы не успеем насладиться их красотой и запахами, мы будем признательны, если вместо букета вы воспользуетесь подпиской на цветы, которую мы организовали с цветочным магазином.
+Таким образом, ваши букеты в течение долгого времени будут радовать нас и напоминать о прекрасном дне, проведенном вместе.</p>
+        <p>Информация и подробная инструкция о том, как оформить подписку будет размещена позже на этом сайте.</p>
+    </section>
+
+    <div class="rsvp-section">
+        <div class="rsvp-form">
+            <form action="#" method="POST" id="contact-form">
+                
+                <label class="section-label">Имя, фамилия</label>
+                <input type="text" name="name" placeholder="Виктория и Александр" required id="name">
+
+                <label class="section-label">Телефон</label>
+                <input type="tel" name="phone" required id="phone">
+
+                <label class="section-label">Присутствие</label>
+                <div class="option-group">
+                    <input type="radio" id="att-yes" name="attendance" value="прийду" id="pr">
+                    <label for="att-yes">Я приду / Мы придем</label>
+                </div>
+                <div class="option-group">
+                    <input type="radio" id="att-maybe" name="attendance" value="возможно прийду" id="pr">
+                    <label for="att-maybe">Скажу ответ позже</label>
+                </div>
+                <div class="option-group">
+                    <input type="radio" id="att-no" name="attendance" value="не прийду"  id="pr" checked>
+                    <label for="att-no">Прийти не получится</label>
+                </div>
+
+                <label class="section-label">Предпочтение по напиткам</label>
+                <div class="option-group">
+                    <input type="checkbox" id="drink-vodka" name="drinks" value="водка" id="drink">
+                    <label for="drink-vodka">Водка</label>
+                </div>
+                <div class="option-group">
+                    <input type="checkbox" id="drink-cognac" name="drinks" value="виски" id="drink">
+                    <label for="drink-cognac">Виски</label>
+                </div>
+                <div class="option-group">
+                    <input type="checkbox" id="drink-white" name="drinks" value="белое вино" id="drink">
+                    <label for="drink-white">Вино белое</label>
+                </div>
+                <div class="option-group">
+                    <input type="checkbox" id="drink-red" name="drinks" value="красное вино" id="drink">
+                    <label for="drink-red">Вино красное</label>
+                </div>
+                <div class="option-group">
+                    <input type="checkbox" id="drink-champagne" name="drinks" value="Шампанское" id="drink">
+                    <label for="drink-champagne">Шампанское</label>
+                </div>
+                <div class="option-group">
+                    <input type="checkbox" id="drink-other" name="drinks" value="не пью" id="drink">
+                    <label for="drink-other">Не пью</label>
+                </div>
+                <label class="section-label">Предпочтение по еде</label>
+                <div class="option-group">
+                    <input type="radio" id="att-no" name="eat" value="рыба"  id="eta" checked>
+                    <label for="att-no">Рыба</label>
+                </div>
+                <div class="option-group">
+                    <input type="radio" id="att-no" name="eat" value="курица"  id="eta" checked>
+                    <label for="att-no">Курица</label>
+                </div>
+                <div class="option-group">
+                    <input type="radio" id="att-no" name="eat" value="говядина"  id="eta" checked>
+                    <label for="att-no">Говядина</label>
+                </div>
+                <div class="option-group">
+                    <input type="radio" id="att-no" name="eat" value="cвинина"  id="eta" checked>
+                    <label for="att-no">Свинина</label>
+                </div>
+
+                <label class="section-label">Пожелания</label>
+                <input type="text" name="wish" placeholder="Виктория будет колу" required id="name">
+
+                <button type="submit">ОТПРАВИТЬ</button>
+                
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/emailjs.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
