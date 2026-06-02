@@ -343,3 +343,16 @@ section {
     align-self: flex-start;
     margin-top: 2px;
 }
+.wedding-footer {
+    text-align: center;
+    padding: 30px 20px;
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+}
+
+.wedding-footer p {
+    margin: 0;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #9aa49d; /* Очень мягкий, ненавязчивый цвет */
+    letter-spacing: 1px;
+}
