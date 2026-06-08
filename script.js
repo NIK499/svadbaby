@@ -158,3 +158,46 @@ document.addEventListener('DOMContentLoaded', function() {
         secondsElement.textContent = String(seconds).padStart(2, '0');
     }, 1000);
 });
+document.addEventListener('DOMContentLoaded', function() {
+    const langBtn = document.getElementById('lang-toggle-btn');
+    if (!langBtn) return; // Если кнопки нет на странице, скрипт спать
+
+    // 1. Автоматически запоминаем оригинальные русские тексты из HTML
+    document.querySelectorAll('[data-en]').forEach(el => el.setAttribute('data-ru', el.textContent));
+    document.querySelectorAll('[data-en-placeholder]').forEach(el => el.setAttribute('data-ru-placeholder', el.getAttribute('placeholder') || ''));
+    document.querySelectorAll('[data-en-value]').forEach(el => el.setAttribute('data-ru-value', el.getAttribute('value') || ''));
+
+    // 2. Определяем начальный язык браузера гостя
+    const userLang = navigator.language || navigator.userLanguage;
+    let currentLang = userLang.toLowerCase().includes('en') ? 'en' : 'ru';
+
+    // Функция, которая на лету меняет язык на сайте
+    function switchLanguage(lang) {
+        const isEn = lang === 'en';
+        
+        // Меняем обычный текст
+        document.querySelectorAll('[data-en]').forEach(el => {
+            el.textContent = isEn ? el.getAttribute('data-en') : el.getAttribute('data-ru');
+        });
+        // Меняем подсказки в полях (placeholder)
+        document.querySelectorAll('[data-en-placeholder]').forEach(el => {
+            el.setAttribute('placeholder', isEn ? el.getAttribute('data-en-placeholder') : el.getAttribute('data-ru-placeholder'));
+        });
+        // Меняем значения (value) — это то, что ваш основной код отправит в EmailJS!
+        document.querySelectorAll('[data-en-value]').forEach(el => {
+            el.setAttribute('value', isEn ? el.getAttribute('data-en-value') : el.getAttribute('data-ru-value'));
+        });
+
+        // Меняем надпись на самой кнопке переключения
+        langBtn.textContent = isEn ? 'RU' : 'EN';
+    }
+
+    // Включаем нужный язык при первой загрузке страницы
+    switchLanguage(currentLang);
+
+    // Следим за кликом по кнопке переключения
+    langBtn.addEventListener('click', function() {
+        currentLang = (currentLang === 'ru') ? 'en' : 'ru';
+        switchLanguage(currentLang);
+    });
+});
